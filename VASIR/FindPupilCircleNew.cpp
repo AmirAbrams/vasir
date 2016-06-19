@@ -199,7 +199,8 @@ void FindPupilCircleNew::getPupilPosition(CvSeq* contour, int minCount,
 				}
 
 				// Fit ellipse to the points
-				cvFitEllipse(arr32Point, count, box);
+                *box = cvFitEllipse(arr32Point);
+                //cvFitEllipse(arr32Point, count, box);
 				center.x = (int)box->center.x;
 				center.y = (int)box->center.y;			
 				int height = (int)box->size.height;
