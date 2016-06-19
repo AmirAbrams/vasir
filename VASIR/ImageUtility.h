@@ -45,16 +45,20 @@
 
 #include "Masek.h"
 #include <opencv2/core/core.hpp>
-#include <opencv2/legacy/compat.hpp>
+//NoID: Removed include
+//#include <opencv2/legacy/compat.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/core/core_c.h>
 #include <opencv2/imgproc/imgproc_c.h>
-
 
 #include <time.h>
 #include <iostream>
 using namespace std;
 
+//NoID: cvCopyImage renamed to cvCopy
+#define cvCopyImage cvCopy
+//NoID: cvFitEllipse renamed to cvFitEllipse2
+#define cvFitEllipse cvFitEllipse2
 
 /** Valid data types. */
 #define NIR_IRIS_STILL 88 /// Classical still: Near-infrared iris still image.
