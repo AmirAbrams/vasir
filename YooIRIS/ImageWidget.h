@@ -109,4 +109,4 @@ protected:
     QList<QRect>  rects;
 
 };
-#endif IMAGE_WIDGET_H
+#endif//IMAGE_WIDGET_H

@@ -2,13 +2,13 @@
 
 #include "YooIRIS.h"
 
-#include "EyeDetection.h"
-#include "ImageQuality.h"
-#include "MatchAlg.h"
-#include "EyeRegionExtraction.h"
+#include "VASIR/EyeDetection.h"
+#include "VASIR/ImageQuality.h"
+#include "VASIR/MatchAlg.h"
+#include "VASIR/EyeRegionExtraction.h"
 
-#include "Analysis.h"
-#include "GetROC.h"
+#include "Analysis/Analysis.h"
+#include "Analysis/GetROC.h"
 
 #if _MSC_VER
     #ifndef sprintf

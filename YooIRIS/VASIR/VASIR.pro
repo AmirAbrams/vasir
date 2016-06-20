@@ -115,10 +115,10 @@ SOURCES += AlignLRPupilPos.cpp\
 	FindPupilCircleNew.cpp\
 	FindTwoPupilCircles.cpp\
 	GetHammingDistance.cpp\
-    GaborConvolve.cpp\
+        GaborConvolve.cpp\
 	ImageQuality.cpp\
 	ImageUtility.cpp\
-    Normalization.cpp\
+        Normalization.cpp\
 	MatchAlg.cpp\
 	MatchingTemplate.cpp\
 	Shifts.cpp
@@ -136,7 +136,7 @@ HEADERS +=\
 	GetHammingDistance.h\
 	ImageQuality.h\
 	ImageUtility.h\
-    Normalization.h\
+        Normalization.h\
 	MatchAlg.h\
 	MatchingTemplate.h\
 	Shifts.h

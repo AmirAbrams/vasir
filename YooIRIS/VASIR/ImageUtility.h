@@ -1,4 +1,4 @@
-/*********************************************************//**
+/***********************************************************
 ** @file ImageUtility.h
 ** Utility functions to process an image.
 ** 
@@ -17,7 +17,7 @@
 ** whatsoever for use by other parties of its source code or open source 
 ** server, and makes no guarantees, expressed or implied, about its quality, 
 ** reliability, or any other characteristic.
-/*********************************************************//**
+***********************************************************
 ** @file ImageUtility.h
 ** Utility functions to process an image.
 ** 
@@ -45,8 +45,6 @@
 
 #include "Masek.h"
 #include <opencv2/core/core.hpp>
-//NoID: Removed include
-//#include <opencv2/legacy/compat.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/core/core_c.h>
 #include <opencv2/imgproc/imgproc_c.h>
