@@ -96,10 +96,11 @@ FORMS   += \
 	ModeDialog.ui \
 	YooIRIS.ui \
         InputDialog.ui
-
+# VASIR, Analysis and MasekAlg libaries
 INCLUDEPATH += $$PWD/Analysis $$PWD/MasekAlg $$PWD/VASIR
 DEPENDPATH += $$PWD/Analysis $$PWD/MasekAlg $$PWD/VASIR
 
+# OpenCV dependency
 win32 {
                 # Add Windows path to OpenCV library and header files here
 
@@ -115,7 +116,7 @@ win32 {
                 INCLUDEPATH += C:\\OpenCV-2.3.1\\build\\include
 }
 else:mac {
-                # Add Mac or Linux path to OpenCV library and header files here
+                # Add Mac path to OpenCV library and header files here
                 LIBS += -L/opt/local/lib/ \
                 -lopencv_core \
                 -lopencv_imgproc \
@@ -127,9 +128,22 @@ else:mac {
 }
 else {
                 # Add Linux path to OpenCV library and header files here
-                INCLUDEPATH += /usr/include
+                INCLUDEPATH += /usr/local/include
+                LIBS += -L/usr/local/include/opencv2 \
+                -lopencv_core \
+                -lopencv_video \
+                -lopencv_videoio \
+                -lopencv_videostab \
+                -lopencv_objdetect \
+                -lopencv_imgproc \
+                -lopencv_highgui \
+                -lopencv_imgcodecs \
+                -lopencv_flann \
+                -lopencv_features2d \
+                -lopencv_calib3d \
+                -lopencv_ml \
+                -lopencv_photo \
+                -lopencv_shape
 }
-# OpenCV dependency
-
 
 
