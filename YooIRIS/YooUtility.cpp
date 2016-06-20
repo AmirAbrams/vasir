@@ -1,5 +1,14 @@
+#include <iostream>
+#include <string>
 #include <QFileDialog>
 #include "YooIRIS.h"
+
+using namespace std;
+
+using std::cout;
+using std::endl;
+using std::string;
+using std::cin;
 
 //Widget: Clean up before new image widget starts
 void YooIRIS::clearWidget()

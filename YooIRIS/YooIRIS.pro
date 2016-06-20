@@ -1,4 +1,3 @@
-
 QT += core gui
 CONFIG += console
 
@@ -14,66 +13,122 @@ SOURCES += \
 	ModeDialog.cpp \
 	YooIRIS.cpp \
 	YooUtility.cpp \
-    InputDialog.cpp
+        InputDialog.cpp \
+        VASIR/Shifts.cpp \
+        VASIR/Normalization.cpp \
+        VASIR/MatchingTemplate.cpp \
+        VASIR/MatchAlg.cpp \
+        VASIR/MasekLee.cpp \
+        VASIR/ImageUtility.cpp \
+        VASIR/ImageQuality.cpp \
+        VASIR/GetHammingDistance.cpp \
+        VASIR/GaborConvolve.cpp \
+        VASIR/FindTwoPupilCircles.cpp \
+        VASIR/FindPupilCircleNew.cpp \
+        VASIR/FindIrisCircle.cpp \
+        VASIR/FindHighLights.cpp \
+        VASIR/FindEyelidCurve.cpp \
+        VASIR/EyeRegionExtraction.cpp \
+        VASIR/EyeDetection.cpp \
+        VASIR/EncodeLee.cpp \
+        VASIR/EdgeDensity.cpp \
+        VASIR/CreateTemplate.cpp \
+        VASIR/AlignLRPupilPos.cpp \
+        MasekAlg/adjgamma.cpp \
+        MasekAlg/canny.cpp \
+        MasekAlg/circlecoordinates.cpp \
+        MasekAlg/createiristemplate.cpp \
+        MasekAlg/encode.cpp \
+        MasekAlg/findcircle.cpp \
+        MasekAlg/findline.cpp \
+        MasekAlg/gaborconvolve.cpp \
+        MasekAlg/gauss.cpp \
+        MasekAlg/gethammingdistance.cpp \
+        MasekAlg/houcircle.cpp \
+        MasekAlg/hysthresh.cpp \
+        MasekAlg/imread.cpp \
+        MasekAlg/imwrite.cpp \
+        MasekAlg/interp2.cpp \
+        MasekAlg/linecoords.cpp \
+        MasekAlg/mymat.cpp \
+        MasekAlg/nonmaxsup.cpp \
+        MasekAlg/normalizeiris.cpp \
+        MasekAlg/radon.cpp \
+        MasekAlg/saveiristemplate.cpp \
+        MasekAlg/segmentiris.cpp \
+        MasekAlg/shiftbits.cpp \
+        MasekAlg/utility.cpp \
+        Analysis/AnScores.cpp \
+        Analysis/GetROC.cpp \
+        Analysis/Utility.cpp
 
-HEADERS  += \
+HEADERS += \
 	CVImageSource.h \
-	ImageSource.h \
 	ImageWidget.h \
 	ModeDialog.h \
 	YooIRIS.h \
-    InputDialog.h
+        InputDialog.h \
+        VASIR/Shifts.h \
+        VASIR/Normalization.h \
+        VASIR/MatchingTemplate.h \
+        VASIR/MatchAlg.h \
+        VASIR/MasekLee.h \
+        VASIR/ImageUtility.h \
+        VASIR/ImageQuality.h \
+        VASIR/GetHammingDistance.h \
+        VASIR/FindPupilCircleNew.h \
+        VASIR/FindIrisCircle.h \
+        VASIR/FindHighLights.h \
+        VASIR/FindEyelidCurve.h \
+        VASIR/EyeRegionExtraction.h \
+        VASIR/EyeDetection.h \
+        VASIR/EncodeLee.h \
+        VASIR/CreateTemplate.h \
+        VASIR/AlignLRPupilPos.h \
+        MasekAlg/global.h \
+        MasekAlg/imread.h \
+        MasekAlg/Masek.h \
+        Analysis/Analysis.h \
+        Analysis/GetROC.h \
+        Analysis/Utility.h
 
-FORMS    += \
+FORMS   += \
 	ModeDialog.ui \
 	YooIRIS.ui \
-    InputDialog.ui
+        InputDialog.ui
 
-# Analysis, MasekAlg, VASIR dependency
-
-
-CONFIG(debug) {	
-	LIBS += -L$$PWD/../Build/MasekAlg/debug/ -lMasekAlg
-	LIBS += -L$$PWD/../Build/VASIR/debug/ -lVASIR
-	LIBS += -L$$PWD/../Build/Analysis/debug/ -lAnalysis
-} else {	
-	LIBS += -L$$PWD/../Build/MasekAlg/release/ -lMasekAlg
-	LIBS += -L$$PWD/../Build/VASIR/release/ -lVASIR
-	LIBS += -L$$PWD/../Build/Analysis/release/ -lAnalysis
-}
-
-INCLUDEPATH += $$PWD/../Analysis $$PWD/../MasekAlg $$PWD/../VASIR
-DEPENDPATH += $$PWD/../Analysis $$PWD/../MasekAlg $$PWD/../VASIR
-
+INCLUDEPATH += $$PWD/Analysis $$PWD/MasekAlg $$PWD/VASIR
+DEPENDPATH += $$PWD/Analysis $$PWD/MasekAlg $$PWD/VASIR
 
 win32 {
-        # Add Windows path to OpenCV library and header files here
+                # Add Windows path to OpenCV library and header files here
 
-        #LIBS += -LC:\\QtVSCV\\OpenCV-2.3.1\\opencv_binaries\\lib\\Debug \
-        LIBS += -LC:\\OpenCV-2.3.1\\opencv_binaries\\lib\\Debug \
-            -lopencv_core231d \
-            -lopencv_imgproc231d \
-            -lopencv_highgui231d \
-            -lopencv_objdetect231d \
-            -lopencv_legacy231d
+                #LIBS += -LC:\\QtVSCV\\OpenCV-2.3.1\\opencv_binaries\\lib\\Debug \
+                LIBS += -LC:\\OpenCV-2.3.1\\opencv_binaries\\lib\\Debug \
+                        -lopencv_core231d \
+                        -lopencv_imgproc231d \
+                        -lopencv_highgui231d \
+                        -lopencv_objdetect231d \
+                        -lopencv_legacy231d
 
-        #INCLUDEPATH += C:\\QtVSCV\\OpenCV-2.3.1\\build\\include
-        INCLUDEPATH += C:\\OpenCV-2.3.1\\build\\include
+                #INCLUDEPATH += C:\\QtVSCV\\OpenCV-2.3.1\\build\\include
+                INCLUDEPATH += C:\\OpenCV-2.3.1\\build\\include
 }
 else:mac {
-    # Add Mac or Linux path to OpenCV library and header files here
-        LIBS += -L/opt/local/lib/ \
-        -lopencv_core \
-        -lopencv_imgproc \
-        -lopencv_highgui \
-        -lopencv_objdetect \
-        -lopencv_legacy
+                # Add Mac or Linux path to OpenCV library and header files here
+                LIBS += -L/opt/local/lib/ \
+                -lopencv_core \
+                -lopencv_imgproc \
+                -lopencv_highgui \
+                -lopencv_objdetect \
+                -lopencv_legacy
 
-        INCLUDEPATH += /opt/local/include
-
-
+                INCLUDEPATH += /opt/local/include
 }
-
+else {
+                # Add Linux path to OpenCV library and header files here
+                INCLUDEPATH += /usr/include
+}
 # OpenCV dependency
 
 

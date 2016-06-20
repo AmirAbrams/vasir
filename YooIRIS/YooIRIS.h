@@ -27,10 +27,7 @@
 #include "ModeDialog.h"
 #include "InputDialog.h"
 
-#include "ImageSource.h"
 #include "CVImageSource.h"
-#include "ImageUtility.h"
-
 
 class EyeDetection;
 
@@ -275,4 +272,4 @@ private:
 	const char* txtDataType(int type);
 
 };
-#endif // !YOO_IRIS_H
+#endif
