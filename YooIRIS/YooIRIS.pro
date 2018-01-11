@@ -129,21 +129,22 @@ else:mac {
 else {
                 # Add Linux path to OpenCV library and header files here
                 INCLUDEPATH += /usr/local/include
-                LIBS += -L/usr/local/include/opencv2 \
-                -lopencv_core \
+                LIBS += -lopencv_core \
                 -lopencv_video \
-                -lopencv_videoio \
                 -lopencv_videostab \
                 -lopencv_objdetect \
                 -lopencv_imgproc \
                 -lopencv_highgui \
-                -lopencv_imgcodecs \
                 -lopencv_flann \
                 -lopencv_features2d \
                 -lopencv_calib3d \
                 -lopencv_ml \
                 -lopencv_photo \
-                -lopencv_shape
+#opencv_imgcodecs is needed and available in opencv 3.0+.
+#You don't need to link it if using version 2.4.11.
+#                -lopencv_videoio \
+#                -lopencv_imgcodecs \
+#                -lopencv_shape
 }
 
 

@@ -23,7 +23,7 @@
 
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
-#include <opencv2/video.hpp>
+#include <opencv2/video/video.hpp>
 
 /**
  * Abstract class that defines the methods an image source, i.e. provider,
