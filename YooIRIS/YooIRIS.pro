@@ -115,36 +115,14 @@ win32 {
                 #INCLUDEPATH += C:\\QtVSCV\\OpenCV-2.3.1\\build\\include
                 INCLUDEPATH += C:\\OpenCV-2.3.1\\build\\include
 }
-else:mac {
-                # Add Mac path to OpenCV library and header files here
-                LIBS += -L/opt/local/lib/ \
-                -lopencv_core \
-                -lopencv_imgproc \
-                -lopencv_highgui \
-                -lopencv_objdetect \
-                -lopencv_legacy
-
-                INCLUDEPATH += /opt/local/include
-}
 else {
-                # Add Linux path to OpenCV library and header files here
-                INCLUDEPATH += /usr/local/include
-                LIBS += -lopencv_core \
-                -lopencv_video \
-                -lopencv_videostab \
-                -lopencv_objdetect \
-                -lopencv_imgproc \
-                -lopencv_highgui \
-                -lopencv_flann \
-                -lopencv_features2d \
-                -lopencv_calib3d \
-                -lopencv_ml \
-                -lopencv_photo \
-#opencv_imgcodecs is needed and available in opencv 3.0+.
-#You don't need to link it if using version 2.4.11.
-#                -lopencv_videoio \
-#                -lopencv_imgcodecs \
-#                -lopencv_shape
+  # In the newer version of Qt, this needs to be done to avoid a package not found error:
+  QT_CONFIG -= no-pkg-config
+
+  CONFIG += link_pkgconfig
+  PKGCONFIG += opencv
+  mac {
+    # Also had to do this for Mac:
+    PKG_CONFIG = /usr/local/bin/pkg-config
+  }
 }
-
-
